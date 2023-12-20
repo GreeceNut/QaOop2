@@ -15,14 +15,14 @@ public class Radio {
         if (newCurrentWave > 9) {
             return;
         }
- //       if (newCurrentWave == 1){
- //           currentWave = newCurrentWave;
- //           return;
- //       }
- //       if (newCurrentWave == 9){
- //          currentWave = newCurrentWave;
- //           return;
- //       }
+        //       if (newCurrentWave == 1){
+        //           currentWave = newCurrentWave;
+        //           return;
+        //       }
+        //       if (newCurrentWave == 9){
+        //          currentWave = newCurrentWave;
+        //           return;
+        //       }
         currentWave = newCurrentWave;
     }
 
@@ -30,8 +30,7 @@ public class Radio {
 //        int nextWave = currentWave;
         if (currentWave < 9) {
             currentWave += 1;
-        }
-        else {
+        } else {
             currentWave = 0;
         }
         //     setCurrentWave(currentWave);
@@ -42,9 +41,8 @@ public class Radio {
 //        int prevWave = currentWave;
         if (currentWave > 0) {
             currentWave -= 1;
-        }
-         else {
-             currentWave = 9;
+        } else {
+            currentWave = 9;
         }
 
 //        setCurrentWave(prevWave);
@@ -90,8 +88,7 @@ public class Radio {
         }
         if (currentVolume < 100) {
             currentVolume += 1;
-        }
-        else{
+        } else {
             currentVolume = 100;
         }
     }
@@ -104,8 +101,7 @@ public class Radio {
         }
         if (minusVolume > 0) {
             currentVolume = minusVolume - 1;
-        }
-        else {
+        } else {
             currentVolume = 0;
         }
     }

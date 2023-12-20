@@ -75,7 +75,7 @@ public class TestRadio {
         Radio radio = new Radio();
         radio.setCurrentWave(-1);
 
- //       radio.nextWave();
+        //       radio.nextWave();
 
         int expected = 0;
         int actual = radio.getCurrentWave();
@@ -128,7 +128,7 @@ public class TestRadio {
         Radio radio = new Radio();
         radio.setCurrentWave(10);
 
- //       radio.prevWave();
+        //       radio.prevWave();
 
         int expected = 0;
         int actual = radio.getCurrentWave();
