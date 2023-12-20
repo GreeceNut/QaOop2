@@ -61,7 +61,6 @@ public class TestRadio {
 
         radio.setCurrentWave(10);
 
-//       radio.nextWave();
 
         int expected = 0;
         int actual = radio.getCurrentWave();
@@ -75,7 +74,6 @@ public class TestRadio {
         Radio radio = new Radio();
         radio.setCurrentWave(-1);
 
- //       radio.nextWave();
 
         int expected = 0;
         int actual = radio.getCurrentWave();
@@ -128,7 +126,6 @@ public class TestRadio {
         Radio radio = new Radio();
         radio.setCurrentWave(10);
 
- //       radio.prevWave();
 
         int expected = 0;
         int actual = radio.getCurrentWave();
@@ -141,7 +138,6 @@ public class TestRadio {
         Radio radio = new Radio();
         radio.setCurrentWave(-1);
 
-//        radio.prevWave();
 
         int expected = 0;
         int actual = radio.getCurrentWave();
@@ -227,26 +223,4 @@ public class TestRadio {
         Assertions.assertEquals(expected, actual);
     }
 
-//   @Test
-//   public void setNextWaveTest() {
-//       Radio radio = new Radio();
-//
-//       radio.setNextWave(9);
-//
-//       int expected = 9;
-//       int actual = radio.getCurrentWave();
-//
-//       Assertions.assertEquals(expected, actual);
-//   }
-//   @Test
-//   public void setNextWave2Test() {
-//       Radio radio = new Radio();
-//
-//       radio.setNextWave(5);
-//
-//       int expected = 6;
-//       int actual = radio.getCurrentWave();
-//
-//       Assertions.assertEquals(expected, actual);
-//   }
 }

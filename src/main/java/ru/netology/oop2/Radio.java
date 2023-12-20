@@ -3,9 +3,14 @@ package ru.netology.oop2;
 public class Radio {
 
     private int currentWave;   // Текущая волна
+    private int currentVolume;  // Текущий звук
 
     public int getCurrentWave() {
         return currentWave;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
     }
 
     public void setCurrentWave(int newCurrentWave) {  //Ограничение волн
@@ -15,83 +20,39 @@ public class Radio {
         if (newCurrentWave > 9) {
             return;
         }
- //       if (newCurrentWave == 1){
- //           currentWave = newCurrentWave;
- //           return;
- //       }
- //       if (newCurrentWave == 9){
- //          currentWave = newCurrentWave;
- //           return;
- //       }
         currentWave = newCurrentWave;
-    }
-
-    public void nextWave() {                   // Следущая волна
-//        int nextWave = currentWave;
-        if (currentWave < 9) {
-            currentWave += 1;
-        }
-        else {
-            currentWave = 0;
-        }
-        //     setCurrentWave(currentWave);
-        //        this.currentWave = nextWave;
-    }
-
-    public void prevWave() {                   //Предыдущая волна
-//        int prevWave = currentWave;
-        if (currentWave > 0) {
-            currentWave -= 1;
-        }
-         else {
-             currentWave = 9;
-        }
-
-//        setCurrentWave(prevWave);
-    }
-//   public void setNextWave(int newNextWave) {
-//     if (newNextWave < 9) {
-//         currentWave = newNextWave + 1;
-//         return;
-//     }
-//     if (newNextWave == 9) {
-//         currentWave = 0;
-//     }
-//     currentWave = newNextWave;
-// }
-
-    //  public void setPrevWave(int newPrevWave) {
-    //      if (newPrevWave > 0) {
-    //          currentWave = newPrevWave - 1;
-    //          return;
-    //      }
-    //      if (newPrevWave == 0) {
-    //          currentWave = 9;
-    //          return;
-    //      }
-    //      currentWave = newPrevWave;
-    //  }
-
-    private int currentVolume;                   // Текущий звук
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
         currentVolume = newCurrentVolume;
     }
 
+    public void nextWave() {                   // Следущая волна
+//        int nextWave = currentWave;
+        if (currentWave < 9) {
+            currentWave += 1;
+        } else {
+            currentWave = 0;
+        }
+    }
+
+    public void prevWave() {                   //Предыдущая волна
+        if (currentWave > 0) {
+            currentWave -= 1;
+        } else {
+            currentWave = 9;
+        }
+    }
+
+
     public void plusVolume() {                           // Звук +
-//        int plusVolume = currentVolume;
         if (currentVolume < 0) {
             currentVolume = 0;
             return;
         }
         if (currentVolume < 100) {
             currentVolume += 1;
-        }
-        else{
+        } else {
             currentVolume = 100;
         }
     }
@@ -104,43 +65,9 @@ public class Radio {
         }
         if (minusVolume > 0) {
             currentVolume = minusVolume - 1;
-        }
-        else {
+        } else {
             currentVolume = 0;
         }
     }
 
-//   public void PlusVolume(int newPlusVolume) {
-//       if (newPlusVolume < 0) {
-//           currentVolume = 0;
-//           return;
-//       }
-//       if (newPlusVolume < 100) {
-//           currentVolume = newPlusVolume + 1;
-//           return;
-//       }
-//       if (newPlusVolume > 100) {
-//           currentVolume = 100;
-//           return;
-//       }
-//
-//       currentVolume = newPlusVolume;
-//   }
-//
-//   public void setMinusVolume(int newMinusVolume) {
-//       if (newMinusVolume > 100) {
-//           currentVolume = 100;
-//           return;
-//       }
-//       if (newMinusVolume > 0) {
-//           currentVolume = newMinusVolume - 1;
-//           return;
-//       }
-//       if (newMinusVolume < 0) {
-//           currentVolume = 0;
-//           return;
-//       }
-//
-//       currentVolume = newMinusVolume;
-//   }
 }
