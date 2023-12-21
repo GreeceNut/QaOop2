@@ -28,7 +28,6 @@ public class Radio {
     }
 
     public void nextWave() {                   // Следущая волна
-//        int nextWave = currentWave;
         if (currentWave < 9) {
             currentWave += 1;
         } else {
