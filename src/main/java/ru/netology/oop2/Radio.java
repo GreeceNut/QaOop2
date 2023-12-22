@@ -2,11 +2,31 @@ package ru.netology.oop2;
 
 public class Radio {
 
+    private int minWave = 0;
+    private int maxWave = 9;
     private int currentWave;   // Текущая волна
+
+    private int minVolume = 0;
+    private int maxVolume = 100;
     private int currentVolume;  // Текущий звук
+
+    public Radio(int size) {
+        maxWave = size - 1;
+        if (maxWave <= 1){
+            maxWave = 1;
+        }
+    }
+
+    public Radio() {
+        maxWave = getMaxWave();
+    }
 
     public int getCurrentWave() {
         return currentWave;
+    }
+
+    public int getMaxWave() {
+        return maxWave;
     }
 
     public int getCurrentVolume() {
@@ -14,10 +34,10 @@ public class Radio {
     }
 
     public void setCurrentWave(int newCurrentWave) {  //Ограничение волн
-        if (newCurrentWave < 0) {
+        if (newCurrentWave < minWave) {
             return;
         }
-        if (newCurrentWave > 9) {
+        if (newCurrentWave > maxWave) {
             return;
         }
         currentWave = newCurrentWave;
@@ -28,44 +48,44 @@ public class Radio {
     }
 
     public void nextWave() {                   // Следущая волна
-        if (currentWave < 9) {
+        if (currentWave < maxWave) {
             currentWave += 1;
         } else {
-            currentWave = 0;
+            currentWave = minWave;
         }
     }
 
     public void prevWave() {                   //Предыдущая волна
-        if (currentWave > 0) {
+        if (currentWave > minWave) {
             currentWave -= 1;
         } else {
-            currentWave = 9;
+            currentWave = maxWave;
         }
     }
 
 
     public void plusVolume() {                           // Звук +
-        if (currentVolume < 0) {
-            currentVolume = 0;
+        if (currentVolume < minVolume) {
+            currentVolume = minVolume;
             return;
         }
-        if (currentVolume < 100) {
+        if (currentVolume < maxVolume) {
             currentVolume += 1;
         } else {
-            currentVolume = 100;
+            currentVolume = maxVolume;
         }
     }
 
     public void minusVolume() {                         // Звук -
         int minusVolume = currentVolume;
-        if (minusVolume > 100) {
-            currentVolume = 100;
+        if (minusVolume > maxVolume) {
+            currentVolume = maxVolume;
             return;
         }
-        if (minusVolume > 0) {
+        if (minusVolume > minVolume) {
             currentVolume = minusVolume - 1;
         } else {
-            currentVolume = 0;
+            currentVolume = minVolume;
         }
     }
 
