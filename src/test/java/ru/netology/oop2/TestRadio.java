@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TestRadio {
+    Radio radio = new Radio();
 
     @Test
     public void shouldSetWave() {                   // Тест рамзмещение волны
-        Radio radio = new Radio();
 
         radio.setCurrentWave(9);
 
@@ -19,7 +19,7 @@ public class TestRadio {
 
     @Test
     public void shouldSetZeroWaveInMinus() {            //Тест на волну ниже минимума
-        Radio radio = new Radio();
+        //       Radio radio = new Radio();
 
         radio.setCurrentWave(-5);
 
@@ -31,7 +31,7 @@ public class TestRadio {
 
     @Test
     public void shouldSetZeroWaveInPlus() {             //Тест на волну выше макса
-        Radio radio = new Radio();
+        //    Radio radio = new Radio();
 
         radio.setCurrentWave(10);
 
@@ -43,7 +43,7 @@ public class TestRadio {
 
     @Test
     public void next08Test() {                       //Следующая волна 0-8
-        Radio radio = new Radio();
+        //  Radio radio = new Radio();
         radio.setCurrentWave(8);
 
         radio.nextWave();
@@ -57,7 +57,7 @@ public class TestRadio {
 
     @Test
     public void nextAboveMaxTest() {                    // следущая волна выше макс
-        Radio radio = new Radio();
+        //   Radio radio = new Radio();
 
         radio.setCurrentWave(10);
 
@@ -71,7 +71,7 @@ public class TestRadio {
 
     @Test
     public void nextBelowMinTest() {                    // следующая волна ниже мин
-        Radio radio = new Radio();
+        //  Radio radio = new Radio();
         radio.setCurrentWave(-1);
 
 
@@ -84,7 +84,7 @@ public class TestRadio {
 
     @Test
     public void next9To0Test() {                        //Следующая волна 9-0
-        Radio radio = new Radio();
+        //  Radio radio = new Radio();
         radio.setCurrentWave(9);
 
         radio.nextWave();
@@ -97,7 +97,7 @@ public class TestRadio {
 
     @Test
     public void prev19Test() {                          //Предыдущая волна 1-9
-        Radio radio = new Radio();
+        //  Radio radio = new Radio();
         radio.setCurrentWave(5);
 
         radio.prevWave();
@@ -110,7 +110,7 @@ public class TestRadio {
 
     @Test
     public void prev0to9Test() {                        //Предыдушая волна 0-9
-        Radio radio = new Radio();
+        //  Radio radio = new Radio();
         radio.setCurrentWave(0);
 
         radio.prevWave();
@@ -123,7 +123,7 @@ public class TestRadio {
 
     @Test
     public void prevAboveMaxTest() {                    //Предыдущая волна выше макса
-        Radio radio = new Radio();
+        //  Radio radio = new Radio();
         radio.setCurrentWave(10);
 
 
@@ -135,7 +135,7 @@ public class TestRadio {
 
     @Test
     public void prevBelowMinTest() {                    // предыдущая волна ниже минимума
-        Radio radio = new Radio();
+        //  Radio radio = new Radio();
         radio.setCurrentWave(-1);
 
 
@@ -147,7 +147,7 @@ public class TestRadio {
 
     @Test
     public void minusVolumeTest() {                     // Тест на звук -
-        Radio radio = new Radio();
+        // Radio radio = new Radio();
         radio.setCurrentVolume(50);
 
         radio.minusVolume();
@@ -160,7 +160,7 @@ public class TestRadio {
 
     @Test
     public void minusVolumeBelowMinTest() {             // Тест на звук - ниже мин
-        Radio radio = new Radio();
+        // Radio radio = new Radio();
         radio.setCurrentVolume(-5);
 
         radio.minusVolume();
@@ -173,7 +173,7 @@ public class TestRadio {
 
     @Test
     public void minusVolumeAboveMaxTest() {             // тест на звук - выше макс
-        Radio radio = new Radio();
+        //   Radio radio = new Radio();
         radio.setCurrentVolume(101);
 
         radio.minusVolume();
@@ -186,7 +186,7 @@ public class TestRadio {
 
     @Test
     public void plusVolumeTest() {                      // тест на звук +
-        Radio radio = new Radio();
+        //  Radio radio = new Radio();
         radio.setCurrentVolume(50);
 
         radio.plusVolume();
@@ -199,7 +199,7 @@ public class TestRadio {
 
     @Test
     public void plusVolumeBelowMinTest() {              // тест на звук + ниже мин
-        Radio radio = new Radio();
+        // Radio radio = new Radio();
         radio.setCurrentVolume(-1);
 
         radio.plusVolume();
@@ -212,7 +212,7 @@ public class TestRadio {
 
     @Test
     public void plusVolumeAboveMaxTest() {              // тест на звук + выше макс
-        Radio radio = new Radio();
+        // Radio radio = new Radio();
         radio.setCurrentVolume(101);
 
         radio.plusVolume();
@@ -223,4 +223,16 @@ public class TestRadio {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void createMaxSizeWave() {               // создание количества радиостанций
+        Radio radio = new Radio(10);
+
+        Assertions.assertEquals(9, radio.getMaxWave());
+    }
+    @Test
+    public void createMaxSizeWaveMinusSize() {       // создание количества радиостанций с отрицательным размером
+        Radio radio = new Radio(-1);
+
+        Assertions.assertEquals(1, radio.getMaxWave());
+    }
 }
