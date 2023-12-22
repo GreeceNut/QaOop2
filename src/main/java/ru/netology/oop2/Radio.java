@@ -1,5 +1,11 @@
 package ru.netology.oop2;
 
+import lombok.*;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Radio {
 
     private int minWave = 0;
@@ -12,25 +18,9 @@ public class Radio {
 
     public Radio(int size) {
         maxWave = size - 1;
-        if (maxWave <= 1){
+        if (maxWave <= 1) {
             maxWave = 1;
         }
-    }
-
-    public Radio() {
-        maxWave = getMaxWave();
-    }
-
-    public int getCurrentWave() {
-        return currentWave;
-    }
-
-    public int getMaxWave() {
-        return maxWave;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void setCurrentWave(int newCurrentWave) {  //Ограничение волн
@@ -90,3 +80,7 @@ public class Radio {
     }
 
 }
+
+
+
+

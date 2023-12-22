@@ -229,6 +229,7 @@ public class TestRadio {
 
         Assertions.assertEquals(9, radio.getMaxWave());
     }
+
     @Test
     public void createMaxSizeWaveMinusSize() {       // создание количества радиостанций с отрицательным размером
         Radio radio = new Radio(-1);
